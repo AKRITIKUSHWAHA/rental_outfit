@@ -1,0 +1,182 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #FFF0F2;
+    color: #000000;
+    @apply antialiased font-sans;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-playfair;
+    color: #000000;
+  }
+}
+
+/* Luxury theme utilities */
+.gold-gradient-bg {
+  background: linear-gradient(135deg, #b88d23 0%, #d4af37 50%, #e1c379 100%);
+}
+
+.gold-gradient-text {
+  background: linear-gradient(135deg, #996e1a 0%, #d4af37 50%, #e1c379 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.maroon-gradient-bg {
+  background: linear-gradient(135deg, #5a0014 0%, #800020 50%, #a31d3b 100%);
+}
+
+.glass-nav {
+  background: rgba(252, 250, 242, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.luxury-card {
+  @apply bg-white border border-cream-200/60 rounded-xl transition-all duration-300;
+  box-shadow: 0 4px 20px -2px rgba(128, 0, 32, 0.04);
+}
+
+.luxury-card:hover {
+  @apply border-gold-300/60 -translate-y-1;
+  box-shadow: 0 12px 30px -4px rgba(128, 0, 32, 0.08);
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-cream-50;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-maroon-800/20 rounded-full hover:bg-maroon-800/40 transition-colors;
+}
+
+/* ========================================================
+   LIGHT PINK PASTEL & BLACK TYPOGRAPHY DESIGN RETROFIT
+   ======================================================== */
+
+/* Body global overrides */
+body {
+  background-color: #FFF0F2 !important;
+  color: #000000 !important;
+}
+
+/* Typography global color overrides — only block-level elements, NOT spans/links
+   Spans will naturally inherit color from parent (white for dark buttons, black for body text) */
+h1, h2, h3, h4, h5, h6, p, label {
+  color: #000000 !important;
+}
+
+/* ---- White text on dark/black/pink buttons — override global black rule ---- */
+a[class*="bg-black"],
+a[class*="bg-slate-9"],
+a[class*="bg-pink-5"],
+a[class*="bg-pink-6"],
+a[class*="bg-maroon"],
+button[class*="bg-black"],
+button[class*="bg-slate-9"],
+button[class*="bg-pink-5"],
+button[class*="bg-pink-6"],
+button[class*="bg-maroon"],
+a[class*="text-white"],
+button[class*="text-white"] {
+  color: #ffffff !important;
+}
+
+/* Also keep span text inside dark buttons white */
+a[class*="bg-black"] span,
+a[class*="bg-black"] svg,
+button[class*="bg-black"] span,
+button[class*="bg-black"] svg,
+a[class*="bg-pink-5"] span,
+a[class*="bg-pink-5"] svg,
+button[class*="bg-pink-5"] span,
+button[class*="bg-pink-5"] svg {
+  color: #ffffff !important;
+}
+
+/* ---- Admin Sidebar: ID selector (max specificity) overrides global black rule ---- */
+#admin-sidebar,
+#admin-sidebar *,
+#admin-sidebar a,
+#admin-sidebar span,
+#admin-sidebar p,
+#admin-sidebar button {
+  color: #ffffff !important;
+}
+
+/* Translucent inputs & textareas */
+input, select, textarea {
+  background-color: rgba(255, 255, 255, 0.75) !important;
+  border: 1px solid rgba(244, 63, 94, 0.25) !important;
+  color: #000000 !important;
+}
+input:focus, select:focus, textarea:focus {
+  border-color: #f43f5e !important; /* Rose-500 focus outline */
+  box-shadow: 0 0 0 2px rgba(244, 63, 94, 0.1) !important;
+}
+
+/* Translucent glass navigation retheme */
+.glass-nav {
+  background: rgba(255, 240, 242, 0.85) !important;
+  border-bottom: 1px solid rgba(244, 63, 94, 0.15) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+}
+
+/* Logo and navigation links text color overrides */
+.glass-nav a, .glass-nav span, .glass-nav p, .glass-nav button {
+  color: #000000 !important;
+}
+.glass-nav a:hover, .glass-nav button:hover {
+  color: #e11d48 !important; /* Rose-600 */
+}
+
+/* Luxury card rethemed to light pink glassmorphic card */
+.luxury-card {
+  background: rgba(255, 255, 255, 0.5) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border: 1px solid rgba(244, 63, 94, 0.12) !important;
+  box-shadow: 0 6px 20px rgba(244, 63, 94, 0.04) !important;
+}
+.luxury-card:hover {
+  border-color: rgba(244, 63, 94, 0.35) !important;
+  background: rgba(255, 255, 255, 0.75) !important;
+  transform: translateY(-4px) !important;
+  box-shadow: 0 12px 30px rgba(244, 63, 94, 0.08) !important;
+}
+
+/* Spec labels and badges */
+.luxury-card strong, .luxury-card span {
+  color: #000000 !important;
+}
+
+/* Custom button styles to fit the light pink theme */
+.luxury-card a, .luxury-card button {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+  border: none !important;
+}
+.luxury-card a:hover, .luxury-card button:hover {
+  background-color: #e11d48 !important; /* hover to Rose-600 */
+  color: #ffffff !important;
+}
+
+/* Footer retheme to match the light pink aesthetics */
+footer {
+  background-color: #FFE5E9 !important;
+  border-top: 2px solid #F43F5E !important;
+  color: #000000 !important;
+}
+footer h4, footer span, footer a, footer p {
+  color: #000000 !important;
+}
+footer a:hover {
+  color: #e11d48 !important;
+}
